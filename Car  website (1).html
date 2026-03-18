@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classic Car Accessories | Premium Auto Shop Dubai</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --black: #0a0a0a;
+            --dark-gray: #1a1a1a;
+            --silver: #adb5bd;
+            --red: #e63946;
+            --white: #ffffff;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--black);
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .logo {
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(10, 10, 10, 0.95);
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--red);
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            color: var(--red);
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: var(--white);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li a {
+            color: var(--white);
+            text-decoration: none;
+            margin-left: 2rem;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .nav-links li a:hover {
+            color: var(--red);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&q=80&w=1920');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--silver);
+            max-width: 600px;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            background: var(--red);
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: var(--transition);
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background: #b32d38;
+            transform: translateY(-3px);
+        }
+
+        /* Sections General */
+        section {
+            padding: 100px 10%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            display: inline-block;
+            border-bottom: 3px solid var(--red);
+            padding-bottom: 10px;
+        }
+
+        /* Products Grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .product-card {
+            background: var(--dark-gray);
+            border: 1px solid #333;
+            padding: 20px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .product-card:hover {
+            border-color: var(--red);
+            transform: translateY(-10px);
+        }
+
+        .product-card i {
+            font-size: 3rem;
+            color: var(--red);
+            margin-bottom: 15px;
+        }
+
+        .product-card h3 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* About Section */
+        .about-container {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            border: 5px solid var(--dark-gray);
+        }
+
+        .about-image img {
+            width: 100%;
+            display: block;
+        }
+
+        /* Contact Section */
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .info-box {
+            background: var(--dark-gray);
+            padding: 30px;
+            border-left: 5px solid var(--red);
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .info-item i {
+            font-size: 1.5rem;
+            color: var(--red);
+            margin-right: 15px;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 300px;
+            filter: grayscale(1) invert(1);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links { display: none; } /* Simplified for demo, can add hamburger toggle */
+            .hero h1 { font-size: 2.2rem; }
+            .contact-wrapper { grid-template-columns: 1fr; }
+            section { padding: 60px 5%; }
+        }
+
+        /* Floating Call Button for Mobile */
+        .call-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--red);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 15px rgba(230, 57, 70, 0.4);
+            z-index: 999;
+            text-decoration: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #000;
+            color: var(--silver);
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Mobile Call Button -->
+    <a href="tel:0501133912" class="call-btn">
+        <i class="fas fa-phone"></i>
+    </a>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">CLASSIC <span>CAR ACCESSORIES</span></div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero" id="home">
+        <h1>Elevate Your Drive</h1>
+        <p>Premium accessories for vintage, sport, and luxury vehicles in the heart of Dubai.</p>
+        <a href="#products" class="btn">Explore Catalog</a>
+    </header>
+
+    <!-- Products Section -->
+    <section id="products">
+        <div class="section-title">
+            <h2>Our Categories</h2>
+        </div>
+        <div class="product-grid">
+            <div class="product-card">
+                <i class="fas fa-couch"></i>
+                <h3>Interior Luxury</h3>
+                <p>Custom car seat covers and premium floor mats designed for comfort.</p>
+            </div>
+            <div class="product-card">
+                <i class="fas fa-volume-up"></i>
+                <h3>Audio & Electronics</h3>
+                <p>High-fidelity sound systems and the latest in-car technology.</p>
+            </div>
+            <div class="product-card">
+                <i class="fas fa-sparkles"></i>
+                <h3>Detailing Kits</h3>
+                <p>Professional grade waxes and cleaners to keep your car showroom ready.</p>
+            </div>
+            <div class="product-card">
+                <i class="fas fa-bolt"></i>
+                <h3>Performance</h3>
+                <p>Functional upgrades to boost your vehicle's style and utility.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" style="background-color: #0f0f0f;">
+        <div class="about-container">
+            <div class="about-image">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBnRkhGP8DI02WScMRuS51GxQudos2tv3fOw&s" alt="Luxury Car">
+            </div>
+            <div class="about-text">
+                <div class="section-title" style="text-align: left;">
+                    <h2>Our Story</h2>
+                </div>
+                <p>Classic Car Accessories is Dubai's premier destination for automotive enthusiasts. Located in Al Bada', we specialize in sourcing durable, stylish, and functional gear that transforms standard rides into personal statements.</p>
+                <br>
+                <p>Whether you are restoring a vintage classic or protecting a brand new luxury SUV, our curated selection ensures your vehicle receives only the best.</p>
+            </div>
+        </div>
+    </section>
+	
+	    <!-- Gallery Section -->
+    <section id="gallery">
+        <div class="section-title">
+            <h2>Our Gallery</h2>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&q=80&w=800" alt="Sports Car">
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="https://images.netdirector.co.uk/gforces-auto/image/upload/w_343,h_257,dpr_2.0,q_auto,c_fill,f_auto,fl_lossy/auto-client/be946c04b732406e3b408afe64f3612a/mg_hs_website_product_image_mobile.jpg" alt="Car Rims">
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="https://blog.sothebysrealty.ae/hubfs/Imported_Blog_Media/58ceaa08-0d22-48a8-a49c-26b78f915c68-2-Oct-12-2025-09-47-50-0488-AM.jpg" alt="Interior Details">
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="https://images.unsplash.com/photo-1611016186353-9af58c69a533?auto=format&fit=crop&q=80&w=800" alt="Luxury Dash">
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div id="lightbox" onclick="this.style.display='none'">
+        <img id="lightbox-img" src="">
+    </div>
+
+
+    <!-- Contact & Location -->
+    <section id="contact">
+        <div class="section-title">
+            <h2>Visit Our Store</h2>
+        </div>
+        <div class="contact-wrapper">
+            <div class="info-box">
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <strong>Location</strong><br>
+                        67MG+4Q9, Al Bada', Dubai, UAE
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <strong>Hours</strong><br>
+                        Open Daily: 9:00 AM – 11:00 PM
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <div>
+                        <strong>Phone</strong><br>
+                        050 113 3912
+                    </div>
+                </div>
+                <a href="https://maps.app.goo.gl/KUPzQgozkCGY3CtQ7" target="_blank" class="btn" style="margin-top: 10px; width: 100%; text-align: center;">Get Directions</a>
+            </div>
+            <div class="map-container">
+                <!-- Embedded Google Map -->
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3609.43123456789!2d55.2678901!3d25.2123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNjfqUc0UTkgQWwgQmFkYScsIER1YmFp!5e0!3m2!1sen!2sae!4v1625000000000!5m2!1sen!2sae" 
+                    width="100%" height="100-%" style="border:0;" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Classic Car Accessories Dubai. Built for Speed & Style.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
