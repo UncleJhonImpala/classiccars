@@ -18,7 +18,6 @@
             --white: #ffffff;
             --transition: all 0.3s ease;
         }
-
         * {
             margin: 0;
             padding: 0;
@@ -254,6 +253,26 @@
             text-decoration: none;
         }
 
+		.gallery-grid {
+		    display: grid;
+		    grid-template-columns: repeat(2, 1fr);
+		    gap: 16px;
+		}
+		
+		.gallery-item {
+		    width: 100%;
+		    aspect-ratio: 4 / 3;
+		    overflow: hidden;
+		    border-radius: 8px;
+		}
+		
+		.gallery-item img {
+		    width: 100%;
+		    height: 100%;
+		    object-fit: cover;
+		    display: block;
+		}
+
         footer {
             text-align: center;
             padding: 20px;
@@ -335,25 +354,26 @@
     </section>
 	
 	    <!-- Gallery Section -->
-    <section id="gallery">
-        <div class="section-title">
-            <h2>Our Gallery</h2>
-        </div>
-        <div class="gallery-grid">
-            <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&q=80&w=600" alt="Sports Car">
-            </div>
-            <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="https://images.netdirector.co.uk/gforces-auto/image/upload/w_343,h_257,dpr_2.0,q_auto,c_fill,f_auto,fl_lossy/auto-client/be946c04b732406e3b408afe64f3612a/mg_hs_website_product_image_mobile.jpg" alt="Car Rims">
-            </div>
-            <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="https://blog.sothebysrealty.ae/hubfs/Imported_Blog_Media/58ceaa08-0d22-48a8-a49c-26b78f915c68-2-Oct-12-2025-09-47-50-0488-AM.jpg" alt="Interior Details">
-            </div>
-            <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="https://images.unsplash.com/photo-1611016186353-9af58c69a533?auto=format&fit=crop&q=80&w=600" alt="Luxury Dash">
-            </div>
-        </div>
-    </section>
+	<section id="gallery">
+	    <div class="section-title">
+	        <h2>Our Gallery</h2>
+	    </div>
+	    <div class="gallery-grid">
+	        <div class="gallery-item" onclick="openLightbox(this)">
+	            <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&q=80&w=600" alt="Sports Car">
+	        </div>
+	        <div class="gallery-item" onclick="openLightbox(this)">
+	            <img src="https://images.netdirector.co.uk/gforces-auto/image/upload/w_343,h_257,dpr_2.0,q_auto,c_fill,f_auto,fl_lossy/auto-client/be946c04b732406e3b408afe64f3612a/mg_hs_website_product_image_mobile.jpg" alt="Car Rims">
+	        </div>
+	        <div class="gallery-item" onclick="openLightbox(this)">
+	            <img src="https://blog.sothebysrealty.ae/hubfs/Imported_Blog_Media/58ceaa08-0d22-48a8-a49c-26b78f915c68-2-Oct-12-2025-09-47-50-0488-AM.jpg" alt="Interior Details">
+	        </div>
+	        <div class="gallery-item" onclick="openLightbox(this)">
+	            <img src="https://images.unsplash.com/photo-1611016186353-9af58c69a533?auto=format&fit=crop&q=80&w=600" alt="Luxury Dash">
+	        </div>
+	    </div>
+	</section>
+
 
     <!-- Lightbox -->
     <div id="lightbox" onclick="this.style.display='none'">
